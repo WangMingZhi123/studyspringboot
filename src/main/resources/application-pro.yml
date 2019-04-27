@@ -1,0 +1,13 @@
+server:
+  port: 8100
+  servlet:
+    #配置项目访问的基本地址，不写则是“/”
+    context-path: /springboot
+    session:
+      #配置session的失效时间，这里是30分钟，不带单位默认为秒
+      timeout: 30m
+  tomcat:
+    #配置tomcat的请求编码
+    uri-encoding: utf-8
+    #最大访问的线程数
+    max-threads: 500

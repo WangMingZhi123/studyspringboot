@@ -24,6 +24,25 @@
             <!--开发web项目必要的包-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--去除默认的jackson，使用google的gson-->
+        <!--<dependency>-->
+            <!--<groupId>com.google.code.gson</groupId>-->
+            <!--<artifactId>gson</artifactId>-->
+        <!--</dependency>-->
+
+        <!--去除默认的jackson，使用alibaba的fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
         </dependency>
 
         <dependency>
@@ -31,6 +50,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!--创建thymeleaf为了做页面使用如：index.html-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
     </dependencies>
 

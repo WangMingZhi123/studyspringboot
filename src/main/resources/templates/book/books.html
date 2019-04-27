@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书列表</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>图书编号</th>
+        <th>图书名称</th>
+        <th>图书作者</th>
+        <th>图书价格</th>
+        <th>图书日期</th>
+        <th>三国图书</th>
+        <th>图片</th>
+    </tr>
+    <tr th:each="book:${books}">
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.price}"></td>
+        <td th:text="${book.favorites}"></td>
+        <td th:text="${book.publicationDate}"></td>
+        <td th:text="${book.sanGuo}"></td>
+        <td ><image  th:src="@{/static/1555832441.jpg}" style="width: 384px !important;height: 189px !important;" /></td>
+    </tr>
+</table>
+<form action="/springboot/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadFile" th:value="请选择文件" >
+    <input type="submit" th:value="上传">
+</form>
+<form action="/springboot/uploads" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadFiles" th:value="请选择多文件" th:multiple="multiple">
+    <input type="submit" th:value="上传">
+</form>
+<!--<div style="background-image: url('springboot/static/img/1555832441.jpg')"></div>-->
+<!--<img src="/static/img/1555832441.jpg">-->
+</body>
+</html>
+<style>
+    table td{
+        padding: 0 50px;
+    }
+</style>

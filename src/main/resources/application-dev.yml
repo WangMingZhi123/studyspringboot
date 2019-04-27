@@ -1,0 +1,29 @@
+server:
+  port: 8099
+  servlet:
+    #配置项目访问的基本地址，不写则是“/”
+    context-path: /springboot
+    session:
+      #配置session的失效时间，这里是30分钟，不带单位默认为秒
+      timeout: 30m
+  tomcat:
+    #配置tomcat的请求编码
+    uri-encoding: utf-8
+    #最大访问的线程数
+    max-threads: 500
+
+spring:
+  #设置web页面格式
+  thymeleaf:
+    cache: false                 #是否开启缓存，默认是true
+    check-template: true        #检查模板是否存在，默认是true
+    check-template-location: true      #检查模板位置是否存在，默认是true
+    encoding: UTF-8
+    prefix: classpath:/templates/        #设置模板文件位置
+#    servlet:
+#      content-type: text/html
+    suffix: .html                         #设置文件后缀默认是html
+  mvc:
+    static-path-pattern: /static/**          #默认配置静态资源的规则如：/static/img/**；不配置的话只需要/**   （此处才是真正的调用静态资源地址）
+  resources:
+    static-locations: classpath:/static/     #配置静态文件地址 (这个只是静态资源存放的位置，并不是调用   springboot对静态资源有5个存放地址，自行查看)

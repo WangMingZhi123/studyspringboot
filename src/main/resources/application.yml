@@ -1,18 +1,22 @@
-server:
-  port: 8098
-  servlet:
-    #配置项目访问的基本地址，不写则是“/”
-    context-path: /springboot
-    session:
-      #配置session的失效时间，这里是30分钟，不带单位默认为秒
-      timeout: 30m
-  tomcat:
-    #配置tomcat的请求编码
-    uri-encoding: utf-8
-    #最大访问的线程数
-    max-threads: 500
 
-book:
-  name: 三国演义
-  author: 罗贯中
-  price: 30
+#book:
+#  #可以直接在yml里面给实体例配置参数
+#  name: 三国演义
+#  author: 罗贯中
+#  price: 30
+#  favorites:
+#    - 足球
+#    - 篮球
+#    - 乒乓球
+#    - 橄榄球
+spring:
+  #为了区分开发与线上环境  是通过application-{alias}.yml进行区分的
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB    #设置单个文件的大小
+      max-request-size: 100MB   #设置单次请求的文件的总大小
+
+multipartUrl:
+  path: E:/ProjectTest/multipart/
