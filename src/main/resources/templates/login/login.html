@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h2>网上图书系统</h2>
+    <form action="/springboot/login" method="post">
+        <div class="form-group">
+            <label for="userName">用户名：</label>
+            <input type="text" class="form-control" id="userName" placeholder="请输入用户名"  />
+<hr>
+            <label for="password">密码：</label>
+            <input type="text" class="form-control" id="password" placeholder="请输入密码"  />
+        </div>
+        <div><span id="login" style="width: 300px;height: 60px;background-color: aquamarine;cursor: pointer">登录</span></div>
+    </form>
+</div>
+</body>
+<script th:inline="javascript">
+
+    $(document).ready(function(){
+        //登录
+        $("#login").click(function(){
+        var userName = document.getElementById("userName").value;
+        var password = document.getElementById("password").value;
+        $.ajax({
+            type: 'POST',
+            url: "login",
+            cache: false,
+            async : false,
+            //dataType: 'json',
+            data:{
+                name:userName,
+                password:password
+            },
+            success: function (result) {
+
+
+            }
+        });
+    });
+    });
+</script>
+</html>
