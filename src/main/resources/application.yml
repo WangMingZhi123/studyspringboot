@@ -25,7 +25,7 @@ spring:
 
 #公共配置与profiles选择无关
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml 
   type-aliases-package: com.spring.study.entity
 
 
