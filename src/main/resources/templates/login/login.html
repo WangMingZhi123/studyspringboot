@@ -30,9 +30,10 @@
         $.ajax({
             type: 'POST',
             url: "login",
+            //url:"http://localhost:8091/hello",
             cache: false,
             async : false,
-            //dataType: 'json',
+            dataType: 'json',
             data:{
                 name:userName,
                 password:password
