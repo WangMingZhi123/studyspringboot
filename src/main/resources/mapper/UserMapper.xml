@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.study.dao.login.LoginDaoMapper" >
     <resultMap id="BaseResultMap" type="com.spring.study.entity.User" >
         <id column="id" property="id" />
         <result column="name" property="name"  />
         <result column="password" property="password" />
     </resultMap>
-    <select id="loginCount" parameterType="java.lang.Integer" >
-        SELECT
-	COUNT(0)
-FROM
-	user u
-WHERE
-	u.name = 'admin' AND u.password = 'admin'
+    <select id="loginCount" resultType="Integer" >
+        SELECT COUNT(0)
+        FROM user u
+        WHERE u.name = #{name} AND u.password = #{password}
     </select>
     <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
         <!--delete from user_t-->
