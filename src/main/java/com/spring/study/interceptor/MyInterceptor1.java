@@ -17,7 +17,7 @@ public class MyInterceptor1 implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         System.out.print("拦截除登录之外的所有！！！！");
-        return false;
+        return true;
     }
 
     @Override

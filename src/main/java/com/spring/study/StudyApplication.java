@@ -4,10 +4,12 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 //@EnableAutoConfiguration        //此注解的主要含义：由于已经存在了web的jar包，用它来开启自动化配置
 //@ComponentScan                  //主要意思将controller注册到spring mvc容器中
 @SpringBootApplication           //相当于上面两个注解
+@ServletComponentScan
 public class StudyApplication {
 
     public static void main(String[] args) {
